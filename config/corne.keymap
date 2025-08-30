@@ -10,13 +10,6 @@
 
 / {
     behaviors {
-        TAP_SEMICOLON: TAP_SEMICOLON {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_SEMICOLON";
-            #binding-cells = <0>;
-            bindings = <&mt SEMI LS(SEMI)>, <&kp COLON>;
-        };
-
         COMILLA: COMILLA {
             compatible = "zmk,behavior-tap-dance";
             label = "COMILLA";
@@ -51,6 +44,13 @@
             #binding-cells = <0>;
             bindings = <&mt RBRC RBRC>, <&kp RIGHT_BRACKET>;
         };
+
+        semicolon: semicolon {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SEMICOLON";
+            #binding-cells = <0>;
+            bindings = <&mt SEMI SEMI>, <&kp COLON>;
+        };
     };
 
     keymap {
@@ -64,9 +64,9 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESCAPE  &kp Q  &kp W  &kp E             &kp R             &kp T           &kp Y      &kp U  &kp I      &kp O    &kp P           &kp BSPC
-&kp TAB     &kp A  &kp S  &kp D             &kp F             &kp G           &kp H      &kp J  &kp K      &kp L    &TAP_SEMICOLON  &COMILLA
-&kp LSHFT   &kp Z  &kp X  &kp C             &kp V             &kp B           &kp N      &kp M  &kp COMMA  &kp DOT  &QUESTION_tap   &kp ENTER
+&kp ESCAPE  &kp Q  &kp W  &kp E             &kp R             &kp T           &kp Y      &kp U  &kp I      &kp O    &kp P          &kp BSPC
+&kp TAB     &kp A  &kp S  &kp D             &kp F             &kp G           &kp H      &kp J  &kp K      &kp L    &semicolon     &COMILLA
+&kp LSHFT   &kp Z  &kp X  &kp C             &kp V             &kp B           &kp N      &kp M  &kp COMMA  &kp DOT  &QUESTION_tap  &kp ENTER
                           &kp LEFT_CONTROL  &kp LA(LEFT_ALT)  &kp LEFT_WIN    &kp SPACE  &mo 1  &mo 2
             >;
         };
@@ -79,7 +79,7 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp ESCAPE    &kp EXCL      &kp AT        &kp POUND     &kp DLLR      &kp PRCNT       &kp AMPS           &kp STAR                  &kp LPAR  &kp RPAR   &kp UNDER  &kp BSPC
+&kp DELETE    &kp EXCL      &kp AT        &kp POUND     &kp DLLR      &kp PRCNT       &kp AMPS           &kp STAR                  &kp LPAR  &kp RPAR   &kp UNDER  &kp BSPC
 &kp LS(CAPS)  &kp KP_EQUAL  &kp LT        &kp GT        &none         &none           &llaves_corchetes  &llaves_corchetes_cierre  &kp UP    &kp TILDE  &kp CARET  &kp BACKSLASH
 &kp LSHFT     &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &kp GRAVE          &kp LEFT                  &kp DOWN  &kp RIGHT  &trans     &trans
                                           &kp LGUI      &trans        &kp SPACE       &kp RET            &trans                    &kp RALT
