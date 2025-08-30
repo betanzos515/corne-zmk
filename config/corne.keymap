@@ -14,42 +14,42 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_SEMICOLON";
             #binding-cells = <0>;
-            bindings = <&mt SEMI LS(SEMI)>;
+            bindings = <&mt SEMI LS(SEMI)>, <&kp COLON>;
         };
 
         COMILLA: COMILLA {
             compatible = "zmk,behavior-tap-dance";
             label = "COMILLA";
             #binding-cells = <0>;
-            bindings = <&mt SINGLE_QUOTE DOUBLE_QUOTES>;
+            bindings = <&mt SINGLE_QUOTE SINGLE_QUOTE>, <&kp DOUBLE_QUOTES>;
         };
 
         QUESTION_tap: QUESTION_tap {
             compatible = "zmk,behavior-tap-dance";
             label = "QUESTION_TAP";
             #binding-cells = <0>;
-            bindings = <&mt SLASH LS(SLASH)>;
+            bindings = <&mt SLASH LS(SLASH)>, <&kp QMARK>;
         };
 
         BACK_SLASH: BACK_SLASH {
             compatible = "zmk,behavior-tap-dance";
             label = "BACK_SLASH";
             #binding-cells = <0>;
-            bindings = <&mt BACKSLASH PIPE>;
+            bindings = <&mt BACKSLASH BACKSLASH>, <&kp PIPE>;
         };
 
         llaves_corchetes: llaves_corchetes {
             compatible = "zmk,behavior-tap-dance";
             label = "LLAVES_CORCHETES";
             #binding-cells = <0>;
-            bindings = <&mt LBRC LBKT>;
+            bindings = <&mt LBRC LEFT_BRACE>, <&kp LEFT_BRACKET>;
         };
 
         llaves_corchetes_cierre: llaves_corchetes_cierre {
             compatible = "zmk,behavior-tap-dance";
             label = "LLAVES_CORCHETES_CIERRE";
             #binding-cells = <0>;
-            bindings = <&mt RBRC RBKT>;
+            bindings = <&mt RBRC RBRC>, <&kp RIGHT_BRACKET>;
         };
     };
 
