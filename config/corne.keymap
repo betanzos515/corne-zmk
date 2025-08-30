@@ -28,14 +28,14 @@
             compatible = "zmk,behavior-tap-dance";
             label = "QUESTION_TAP";
             #binding-cells = <0>;
-            bindings = <&mt SLASH LS(SLASH)>, <&kp QMARK>;
+            bindings = <&kp SLASH>, <&kp QUESTION>;
         };
 
         BACK_SLASH: BACK_SLASH {
             compatible = "zmk,behavior-tap-dance";
             label = "BACK_SLASH";
             #binding-cells = <0>;
-            bindings = <&mt BACKSLASH BACKSLASH>, <&kp PIPE>;
+            bindings = <&kp BACKSLASH>, <&kp PIPE>;
         };
 
         llaves_corchetes: llaves_corchetes {
