@@ -61,6 +61,20 @@
             release-after-ms = <700>;
             quick-release;
         };
+        CTRL_OS: CTRL_OS {
+            compatible = "zmk,behavior-sticky-key";
+            #binding-cells = <1>;
+            bindings = <&kp>;
+            release-after-ms = <900>;   // 800–1000 ms suele ir bien para llegar a flechas en capa
+            // (sin quick-release)
+        };
+        ALT_OS: ALT_OS {
+            compatible = "zmk,behavior-sticky-key";
+            #binding-cells = <1>;
+            bindings = <&kp>;
+            release-after-ms = <900>;   // ajusta 700–1100 a gusto
+            // sin quick-release
+        };
     };
 
     keymap {
@@ -77,7 +91,7 @@
 &kp ESCAPE  &kp Q  &kp W  &kp E             &kp R         &kp T           &kp Y      &kp U  &kp I      &kp O    &kp P          &kp BSPC
 &kp TAB     &kp A  &kp S  &kp D             &kp F         &kp G           &kp H      &kp J  &kp K      &kp L    &semicolon     &COMILLA
 &kp LSHFT   &kp Z  &kp X  &kp C             &kp V         &kp B           &kp N      &kp M  &kp COMMA  &kp DOT  &QUESTION_tap  &kp ENTER
-                          &kp LEFT_CONTROL  &kp LEFT_ALT  &CMD_OS LGUI    &kp SPACE  &mo 1  &mo 2
+                          &CTRL_OS LCTRL  &ALT_OS LALT  &CMD_OS LGUI    &kp SPACE  &mo 1  &mo 2
             >;
         };
 
@@ -92,7 +106,7 @@
 &kp DELETE    &kp EXCL      &kp AT        &kp POUND     &kp DLLR      &kp PRCNT       &kp AMPS           &kp STAR                  &kp LPAR  &kp RPAR   &kp UNDER  &kp BSPC
 &kp LS(CAPS)  &kp KP_EQUAL  &kp LT        &kp GT        &none         &none           &llaves_corchetes  &llaves_corchetes_cierre  &kp UP    &kp TILDE  &kp CARET  &BACK_SLASH
 &kp LSHFT     &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &kp GRAVE          &kp LEFT                  &kp DOWN  &kp RIGHT  &trans     &trans
-                                          &none         &kp LEFT_ALT  &CMD_OS LGUI    &kp RET            &trans                    &kp RALT
+                                          &CTRL_OS LCTRL        &ALT_OS LALT  &CMD_OS LGUI    &kp RET            &trans                    &kp RALT
             >;
         };
 
@@ -107,7 +121,7 @@
 &kp ESCAPE  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS      &kp PRCNT       &kp K_PP    &kp C_VOL_UP       &none           &none  &none  &kp BSPC
 &kp LCTRL   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp MINUS     &kp EQUAL       &kp C_STOP  &kp C_VOLUME_DOWN  &none           &none  &none  &none
 &kp LSHFT   &kp KP_N1        &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp NUMBER_0  &kp ASTERISK    &kp K_MUTE  &kp PLUS           &kp C_SNAPSHOT  &none  &none  &none
-                                              &none            &kp LEFT_ALT  &CMD_OS LGUI    &kp RET     &trans             &none
+                                              &CTRL_OS LCTRL            &ALT_OS LALT  &CMD_OS LGUI    &kp RET     &trans             &none
             >;
         };
     };
